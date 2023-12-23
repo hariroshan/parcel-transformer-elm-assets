@@ -1,5 +1,5 @@
 {
-  "name": "parcel-elm-asset-dependency",
+  "name": "parcel-transformer-elm-assets",
   "version": "1.0.0",
   "description": "Adds elm assets such as images, svg, fonts, etc as parcel asset dependency which allows parcel to process it in the pipeline.",
   "main": "index.js",

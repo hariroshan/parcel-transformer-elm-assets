@@ -1,15 +1,15 @@
 # Asset dependency adder for ELM
 
-1. Install `parcel-elm-asset-dependency` with 
+1. Install `parcel-transformer-elm-assets` with 
     ```sh
-    npm install -D parcel-elm-asset-dependency
+    npm install -D parcel-transformer-elm-assets
     ```
-1. Simply add `parcel-elm-asset-dependency` to the transformers like so,
+1. Simply add `parcel-transformer-elm-assets` to the transformers like so,
 
     ```json
     {
         "transformers": {
-            "*.js": ["parcel-elm-asset-dependency", "..."]
+            "*.js": ["parcel-transformer-elm-assets", "..."]
         }
     }
     ```

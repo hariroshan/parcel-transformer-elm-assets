@@ -26,7 +26,7 @@
                 [ src "ASSET_URL:../assets/red-bolt.png" ] 
                 [] 
             , img 
-                [ src "ASSET_URL:../assets/solider.jpeg?width=250&quality=50" ] 
+                [ src "ASSET_URL:../assets/soldier.jpeg?width=250&quality=50" ] 
                 [] 
             ]
     ```
@@ -36,29 +36,49 @@
 ```elm
 
 photo : String
-photo = "ASSET_URL:" ++ "./assets/jane-doe.jpeg"
+photo = "ASSET_URL:" ++ "../assets/jane-doe.jpeg"
 
 photo2 : Bool -> String
 photo2 canPickHuman = "ASSET_URL:" ++ 
     ( if canPickHuman then 
-        "./assets/john-doe.jpeg"
+        "../assets/john-doe.jpeg"
       else 
-        "./assets/dog.jpeg"
+        "../assets/dog.jpeg"
     )
+
+photo3 : Bool -> String
+photo3 canPickHuman = 
+    ( if canPickHuman then 
+        "ASSET_URL:../assets/john-doe.jpeg"
+      else 
+        "ASSET_URL:../assets/dog.jpeg"
+    )
+
 ```
 
 ## Recommended
 
 ```elm
 
-photo : String
-photo = "ASSET_URL:./assets/jane-doe.jpeg"
+johnDoe : String
+johnDoe = "ASSET_URL:../assets/jane-doe.jpeg"
 
-photo2 : Bool -> String
-photo2 canPickHuman = 
+dog : String
+dog = "ASSET_URL:../assets/dog.jpeg"
+
+smallDog : String
+smallDog = "ASSET_URL:../assets/dog.jpeg?width=250&quality=50"
+
+dynamicallyPickImageSrc : Bool -> String
+dynamicallyPickImageSrc canPickHuman = 
     ( if canPickHuman then 
-        "ASSET_URL:./assets/john-doe.jpeg"
+        johnDoe
       else 
-        "ASSET_URL:./assets/dog.jpeg"
+        smallDog
     )
+
+makeImage : Bool -> Html msg 
+makeImage canPickHuman = 
+    img [ src (dynamicallyPickImageSrc canPickHuman) ] []
+
 ```

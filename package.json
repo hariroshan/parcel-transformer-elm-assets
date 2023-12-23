@@ -9,8 +9,11 @@
     "asset",
     "dependency"
   ],
+  "repository": {
+    "url": "https://github.com/hariroshan/parcel-elm-asset-dependency"
+  },
   "author": "Hari Roshan",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "@parcel/plugin": "^2.10.3"
   }

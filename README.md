@@ -35,10 +35,10 @@
 
 ```elm
 
-photo :: String
+photo : String
 photo = "ASSET_URL:" ++ "./assets/jane-doe.jpeg"
 
-photo2 :: Bool -> String
+photo2 : Bool -> String
 photo2 canPickHuman = "ASSET_URL:" ++ 
     ( if canPickHuman then 
         "./assets/john-doe.jpeg"
@@ -51,10 +51,10 @@ photo2 canPickHuman = "ASSET_URL:" ++
 
 ```elm
 
-photo :: String
+photo : String
 photo = "ASSET_URL:./assets/jane-doe.jpeg"
 
-photo2 :: Bool -> String
+photo2 : Bool -> String
 photo2 canPickHuman = 
     ( if canPickHuman then 
         "ASSET_URL:./assets/john-doe.jpeg"

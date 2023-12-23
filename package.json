@@ -1,0 +1,17 @@
+{
+  "name": "parcel-elm-asset-dependency",
+  "version": "1.0.0",
+  "description": "Adds elm assets such as images, svg, fonts, etc as parcel asset dependency which allows parcel to process it in the pipeline.",
+  "main": "index.js",
+  "keywords": [
+    "parcel",
+    "elm",
+    "asset",
+    "dependency"
+  ],
+  "author": "Hari Roshan",
+  "license": "ISC",
+  "devDependencies": {
+    "@parcel/plugin": "^2.10.3"
+  }
+}

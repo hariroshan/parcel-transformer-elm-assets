@@ -9,7 +9,15 @@
     "asset",
     "dependency"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">= 12.0.0",
+    "parcel": "^2.10.3"
+  },
   "repository": {
+    "type": "git",
     "url": "https://github.com/hariroshan/parcel-elm-asset-dependency"
   },
   "author": "Hari Roshan",

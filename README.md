@@ -31,6 +31,9 @@
             ]
     ```
 
+Behind the hood, it will generate `new URL('soldier.jpeg?width=250&quality=50', import.meta.url)` for the asset. [Refer parcel docs](https://parceljs.org/languages/javascript/#url-dependencies)
+
+
 ## Do not generate URLs dynamically like
 
 ```elm
@@ -56,7 +59,7 @@ photo3 canPickHuman =
 
 ```
 
-## Recommended
+## Recommended way
 
 ```elm
 

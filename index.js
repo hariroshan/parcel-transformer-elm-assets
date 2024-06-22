@@ -3,17 +3,12 @@ const Transformer = require('@parcel/plugin').Transformer;
 module.exports = new Transformer({
   async transform({asset}) {
     let code = await asset.getCode();
-    let deps = code.matchAll(/ASSET_URL:(.+)[\'\"]/g);
+    let result = code.replace(/[\'\"]ASSET_URL:(.*?)[\'\"]/g, (m, dep) => {
+      asset.addURLDependency(dep);
+      return `(new URL("${dep}", import.meta.url))`;
+    });
 
-    for (let dep of deps) {
-      let depId = asset.addDependency({
-        specifier: dep[1],
-        specifierType: 'url'
-      });
-
-      code = code.replaceAll(`\'ASSET_URL:${dep[1]}\'`, `(new URL(\'${dep[1]}\', import.meta.url))`)
-    }
-    asset.setCode(code)
+    asset.setCode(result)
     return [asset];
   }
 });
